@@ -7,7 +7,7 @@
     </div>
     <div class="queue">
         <h3>The Queue - {{queueLength}}</h1>
-        <h4 v-for="(item, index) in queue" v-bind:class="item.color">{{item.text}}</h4>
+        <h4 v-for="(item, index) in queue" v-bind:class="item.color" v-if="index >= offset">{{item.text}}</h4>
     </div>
     <div class="inputs">
         <div class="source">

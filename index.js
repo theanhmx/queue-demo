@@ -4,6 +4,7 @@ const app = new Vue({
   data: {
     message: 'A super simple queue demo with Vue!',
     queue: [],
+    offset: 0,
     redText: 'The Anh',
     greenText: 'Gian Ac',
     blueText: 'theanhgianac',
@@ -11,7 +12,7 @@ const app = new Vue({
   },
   computed: {
     queueLength: function () {
-      return this.queue.length;
+      return (this.queue.length - this.offset);
     }
   },
   methods: {
@@ -19,11 +20,23 @@ const app = new Vue({
       this.queue.push(item);
     },
     dequeue: function () {
-      return this.queue.shift();
+      // if the queue is empty, return immediately
+      if (this.queue.length == 0) return undefined;
   
+      // store the item at the front of the queue
+      var item = this.queue[this.offset];
+  
+      // increment the offset and remove the free space if necessary
+      if (++this.offset * 2 >= this.queue.length) {
+        this.queue = this.queue.slice(this.offset);
+        this.offset = 0;
+      }
+  
+      // return the dequeued item
+      return item;
     },
     peek: function () {
-      return (this.queue[0] ? this.queue[0] : undefined);
+      return (this.queue.length > 0 ? this.queue[this.offset] : undefined);
     },
     writeToFile: function(color, text) {
       this.enqueue({
