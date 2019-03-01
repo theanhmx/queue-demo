@@ -1,0 +1,60 @@
+#queue-demo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.file {
+    border: 1px solid dodgerblue;
+    border-radius: 0.5em;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+span {
+    margin-right: 0.2rem;
+}
+
+.queue {
+    border: 1px solid dodgerblue;
+    border-radius: 0.5em;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.inputs {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    left: 10%;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.source {
+    border: 1px solid dodgerblue;
+    border-radius: 0.5em;
+    margin: 10px;
+}
+
+button {
+    height: 2rem;
+    width: 3.5rem;
+    margin: 5px;
+    border-radius: 0.5em;
+}
+
+input {
+    width: 30rem;
+    height: 2rem;
+    border: none;
+}

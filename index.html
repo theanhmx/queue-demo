@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="text/css" href="index.css">
+<div id="queue-demo">
+    <h2>{{message}}</h2>
+    <div class="file">
+        <h3>The File</h1>
+        <span v-for="item in fileArray" v-bind:class="item.color">{{item.text}}</span>
+    </div>
+    <div class="queue">
+        <h3>The Queue - {{queueLength}}</h1>
+        <h4 v-for="(item, index) in queue" v-bind:class="item.color">{{item.text}}</h4>
+    </div>
+    <div class="inputs">
+        <div class="source">
+            <button class="red" v-on:click="writeToFile('red', redText)">
+                Red
+            </button>
+            <input v-model="redText">
+        </div>
+        <div class="source">
+            <button class="green" v-on:click="writeToFile('green', greenText)">
+                Green
+            </button>
+            <input v-model="greenText">
+        </div>
+        <div class="source">
+            <button class="blue" v-on:click="writeToFile('blue', blueText)">
+                Blue
+            </button>
+            <input v-model="blueText">
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./lorem.js"></script>
+<script src="./index.js"></script>
+
+<!-- https://www.w3schools.com/jsref/jsref_obj_array.asp -->
+<!-- http://code.iamkate.com/javascript/queues/#usingqueues -->
