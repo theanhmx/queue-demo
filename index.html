@@ -11,19 +11,19 @@
     </div>
     <div class="inputs">
         <div class="source">
-            <button class="red" v-on:click="writeToFile('red', redText)">
+            <button class="red" v-on:click="writeToFile('red', redText, 1)">
                 Red
             </button>
             <input v-model="redText">
         </div>
         <div class="source">
-            <button class="green" v-on:click="writeToFile('green', greenText)">
+            <button class="green" v-on:click="writeToFile('green', greenText, 2)">
                 Green
             </button>
             <input v-model="greenText">
         </div>
         <div class="source">
-            <button class="blue" v-on:click="writeToFile('blue', blueText)">
+            <button class="blue" v-on:click="writeToFile('blue', blueText, 3)">
                 Blue
             </button>
             <input v-model="blueText">
